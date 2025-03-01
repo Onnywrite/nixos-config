@@ -1,15 +1,15 @@
 {
   wayland.windowManager.hyprland.settings = {
     bind = [
-      "$mainMod SHIFT, Return, exec, $terminal"
-      "$mainMod SHIFT, C, killactive,"
+      "$mainMod, Q, exec, $terminal"
+      "$mainMod SHIFT, X, killactive,"
       "$mainMod SHIFT, Q, exit,"
-      "$mainMod,       R, exec, $fileManager"
+      "$mainMod,       E, exec, $fileManager"
       "$mainMod,       F, togglefloating,"
-      "$mainMod,       D, exec, $menu --show drun"
+      "$mainMod,       Z, exec, $menu --show drun"
       "$mainMod,       P, pin,"
       "$mainMod,       J, togglesplit,"
-      "$mainMod,       E, exec, bemoji -cn"
+      "$mainMod,       R, exec, bemoji -cn"
       "$mainMod,       V, exec, cliphist list | $menu --dmenu | cliphist decode | wl-copy"
       "$mainMod,       B, exec, pkill -SIGUSR2 waybar"
       "$mainMod SHIFT, B, exec, pkill -SIGUSR1 waybar"

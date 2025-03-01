@@ -13,6 +13,10 @@
         "XDG_SCREENSHOTS_DIR,$HOME/screens"
       ];
 
+#      monitor = [
+#        ",2560x1440@75,0x0,1"
+#	",1920x1080@60,2560x0,1"
+#      ];
       monitor = ",1920x1080@60,auto,1";
       "$mainMod" = "SUPER";
       "$terminal" = "alacritty";
