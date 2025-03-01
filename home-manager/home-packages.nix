@@ -44,9 +44,8 @@
     zip
 
     # Coding stuff
-    openjdk23
-    nodejs
-    python311
+    go
+    zed-editor
 
     # WM stuff
     libsForQt5.xwaylandvideobridge
