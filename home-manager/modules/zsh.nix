@@ -7,7 +7,7 @@
 
     shellAliases =
       let
-        flakeDir = "~/flake";
+        flakeDir = "~/nix";
       in {
         sw = "nh os switch";
         upd = "nh os switch --update";
