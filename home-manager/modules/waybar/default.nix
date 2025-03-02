@@ -37,14 +37,14 @@
         "hyprland/language" = {
           format-en = "🇺🇸";
           format-ru = "🇷🇺";
-          format-he = "🇮🇱";
           min-length = 5;
           tooltip = false;
         };
 
         "custom/weather" = {
           format = " {} ";
-          exec = "curl -s 'wttr.in/Tashkent?format=%c%t'";
+          # Note: set your city here
+          exec = "curl -s 'wttr.in/Tver?format=%c%t'";
           interval = 300;
           class = "weather";
         };
