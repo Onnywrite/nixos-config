@@ -15,14 +15,13 @@
       inputs.nixpkgs.follows = "nixpkgs";
     };
 
-    # COMING SOON...
-    #nixvim = {
-    #  url = "github:nix-community/nixvim";
-    #  inputs.nixpkgs.follows = "nixpkgs";
-    #};
+    zen-browser = {
+      url = "github:youwen5/zen-browser-flake";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
   };
 
-  outputs = { self, nixpkgs, home-manager, ... }@inputs: let
+  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs: let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     user = "onnywrite";
@@ -52,7 +51,7 @@
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
-        inherit inputs homeStateVersion user;
+        inherit inputs homeStateVersion user zen-browser;
       };
 
       modules = [

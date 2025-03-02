@@ -1,4 +1,4 @@
-{ pkgs, ... }: {
+{ pkgs, zen-browser, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -14,6 +14,7 @@
     teams-for-linux
     telegram-desktop
     vesktop
+    zen-browser.packages.${pkgs.system}.default
 
     # CLI utils
     bc
