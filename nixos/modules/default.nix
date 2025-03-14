@@ -13,6 +13,7 @@
     ./nix.nix
     ./timezone.nix
     ./user.nix
+    ./virtualisation.nix
     ./zram.nix
   ];
 }
