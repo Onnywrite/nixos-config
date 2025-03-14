@@ -18,6 +18,10 @@
       "$mainMod,       N, exec, swaync-client -t"
       ", Print, exec, grimblast --notify --freeze copysave area"
 
+      # Programs
+      "$mainMod,       T, exec, telegram-desktop"
+      "$mainMod,       W, exec, zen"
+
       # Moving focus
       "$mainMod, left, movefocus, l"
       "$mainMod, right, movefocus, r"
