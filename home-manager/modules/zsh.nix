@@ -32,8 +32,8 @@
     history.path = "${config.xdg.dataHome}/zsh/history";
 
     initExtra = ''
-      # Start Tmux automatically if not already running. No Tmux in TTY
-      if [ -z "$TMUX" ] && [ -n "$DISPLAY" ]; then
+      # Start Tmux automatically if not already running. No Tmux in TTY and non-Alacritty
+      if [ -z "$TMUX" ] && [ -n "$DISPLAY" ] && [ -n "$ALACRITTY_WINDOW_ID" ]; then
         tmux attach-session -t default || tmux new-session -s default
       fi
 
