@@ -46,7 +46,12 @@
 
     # Coding stuff
     go
+    postman
+    vscode
     zed-editor
+
+    # Golang CLI utils
+    oapi-codegen
 
     # WM stuff
     libsForQt5.xwaylandvideobridge
