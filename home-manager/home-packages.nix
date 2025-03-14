@@ -1,4 +1,4 @@
-{ pkgs, zen-browser, ... }: {
+{ pkgs, unstable, zen-browser, ... }: {
   nixpkgs.config.allowUnfree = true;
 
   home.packages = with pkgs; [
@@ -45,13 +45,13 @@
     zip
 
     # Coding stuff
-    go
+    unstable.go
     postman
-    vscode
+    unstable.vscode-fhs
     zed-editor
 
     # Golang CLI utils
-    oapi-codegen
+    unstable.oapi-codegen
 
     # WM stuff
     libsForQt5.xwaylandvideobridge

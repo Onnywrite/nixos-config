@@ -2,8 +2,9 @@
   description = "My system configuration";
 
   inputs = {
-
     nixpkgs.url = "github:nixos/nixpkgs/nixos-24.11";
+
+    nixpkgs-unstable.url = "github:nixos/nixpkgs/nixos-unstable";
 
     home-manager = {
       url = "github:nix-community/home-manager/release-24.11";
@@ -21,7 +22,7 @@
     };
   };
 
-  outputs = { self, nixpkgs, home-manager, zen-browser, ... }@inputs: let
+  outputs = { self, nixpkgs, nixpkgs-unstable, home-manager, zen-browser, ... }@inputs: let
     system = "x86_64-linux";
     homeStateVersion = "24.11";
     user = "onnywrite";
@@ -29,10 +30,15 @@
       { hostname = "nixdesk"; stateVersion = "24.11"; }
     ];
 
+    unstable = import nixpkgs-unstable {
+      inherit system;
+      config.allowUnfree = true;
+    };
+
     makeSystem = { hostname, stateVersion }: nixpkgs.lib.nixosSystem {
       system = system;
       specialArgs = {
-        inherit inputs stateVersion hostname user;
+        inherit inputs stateVersion hostname user unstable;
       };
 
       modules = [
@@ -51,7 +57,7 @@
     homeConfigurations.${user} = home-manager.lib.homeManagerConfiguration {
       pkgs = nixpkgs.legacyPackages.${system};
       extraSpecialArgs = {
-        inherit inputs homeStateVersion user zen-browser;
+        inherit inputs homeStateVersion user zen-browser unstable;
       };
 
       modules = [
